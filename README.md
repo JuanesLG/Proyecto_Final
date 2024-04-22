@@ -3,13 +3,11 @@
 ```python
 from turtle import *
 
-# Inicializar la ventana de Turtle
 ventana = Screen()
-#ventana.setup(width=500, height=500)  # Establecer el tamaño de la ventana
-ventana.title("Dibujo Turtle")
+ventana.title("Paisaje")
 
 ventana.getcanvas().master.resizable(False, False)
-# ventana.getcanvas().master.iconbitmap(r"C:\Users\tortuga.ico")
+ventana.getcanvas().master.iconbitmap(r"C:\Users\G.ico")
 
 ancho_ventana_turtle = 800
 alto_ventana_turtle = 600
@@ -26,158 +24,161 @@ ventana.getcanvas().master.geometry(f"{ancho_ventana_turtle}x{alto_ventana_turtl
 
 speed (10)
 
-penup()
-goto(-500,400)
-pendown()
-fillcolor("skyblue")
-begin_fill()
-for i in range(2):
- forward(1000)
+def posicion_cielo():
+ penup()
+ goto(-500,400)
+ pendown()
+
+def cielo():
+ fillcolor("skyblue")
+ begin_fill()
+ for i in range(2):
+  forward(1000)
+  right(90)
+  forward(400)
+  right(90)
+ end_fill()
+
+
+def posicion_suelo():
+ penup()
+ goto(-500,0)
+ pendown()
+
+def suelo():
+ fillcolor("seaGreen")
+ begin_fill()
+ for i in range(2):
+  forward(1000)
+  right(90)
+  forward(400)
+  right(90)
+ end_fill()
+
+def posicion_casa():
+    penup()
+    goto(50,0)
+
+def frente_casa():
+    fillcolor("firebrick")
+    begin_fill()
+    for i in range (2):
+        pendown()
+        forward(300)
+        right(90)
+        forward(150)
+        right(90)
+    end_fill()
+
+def techo_casa():
+    fillcolor("black")
+    begin_fill()
+    forward(300)
+    left(126.87)
+    forward(125)
+    left(53.13)
+    forward(150)
+    left(53.13)
+    forward(125)
+    end_fill()
+    left(126.87)
+
+def posicion_ventana_1():
+ penup()
+ goto(105,-25)
+ pendown()
+
+def posicion_ventana_2():
+ penup()
+ goto(257.5,-25)
+ pendown() 
+
+def ventanas():
+ fillcolor("white")
+ begin_fill()
+ for i in range(4):
+  forward(40)
+  right(90)
+ end_fill()
+ forward(20)
  right(90)
- forward(400)
+ forward(40)
+ backward(20)
  right(90)
-end_fill()
-
-penup()
-goto(-500,0)
-pendown()
-
-fillcolor("seaGreen")
-begin_fill()
-for i in range(2):
- forward(1000)
- right(90)
- forward(400)
- right(90)
-end_fill()
-
-#sol
-pensize(5)
-penup()
-goto(-250,140)
-pendown()
-color('orange','yellow')
-begin_fill()
-circle(50)
-end_fill()
-
-for i in range(18):
-    right(90)
-    forward(40)
-    back(40)
-    left(40)
-    circle(50,0) #primero radio despues grados
-
-penup()
-goto(100,0)
-pendown()
-
-fillcolor("black")
-begin_fill()
-pensize(5)
-forward(300)
-left(126.87)
-forward(125)
-left(53.13)
-forward(150)
-left(53.13)
-forward(125)
-end_fill()
-
-penup()
-left(36.87)
-pendown()
-fillcolor("green")
-begin_fill()
-pensize(5)
-for i in range(2):
- forward(150)
- left(90)
- forward(150)
-end_fill()
-
-pendown()
-penup()
-goto(285,-150)
-pendown()
-fillcolor("brown")
-begin_fill()
-forward(70)
-left(90)
-forward(70)
-left(90)
-forward(70)
-end_fill()
-
-penup()
-goto(177.5, -25)
-pendown()
-fillcolor("white")
-begin_fill()
-for i in range(4):
+ forward(20)
+ backward(40)
+ penup()
  forward(40)
  right(90)
-end_fill()
-forward(20)
-right(90)
-forward(40)
-backward(20)
-right(90)
-forward(20)
-backward(40)
+ forward(20)
+ right(90)
+
+def posicion_puerta():
+ penup()
+ goto(230,-150)
+ pendown()
+  
+
+def puerta_y_chapa():
+ fillcolor("maroon")
+ begin_fill()
+ for i in range(2):
+  left(90)
+  forward(70)
+  left(90)
+  forward(60)
+ end_fill()
+
+ penup()
+ goto(220,-120)
+ pendown()
+ pencolor("yellow")
+ fillcolor("yellow")
+ begin_fill()
+ width(1)
+ circle(4)
+ end_fill()
+
+def sol():
+    penup()
+    goto(-250,220)
+    pendown()
+    pencolor('orange')
+    pensize(5)
+
+    for i in range(6):
+       forward(80)
+       back(160)
+       forward(80)
+       right(30)
+
+    penup()
+    goto(-250,270)
+    pendown()
+    fillcolor('yellow') 
+    begin_fill()
+    circle(50)
+    end_fill()
 
 
 
-penup()
-goto(362.5, -25)
-pendown()
-fillcolor("white")
-begin_fill()
-left(90)
-for i in range(4):
- forward(40)
- left(90)
-end_fill()
-forward(20)
-left(90)
-forward(40)
-backward(20)
-right(90)
-forward(20)
-backward(40)
+posicion_cielo()
+cielo()
+posicion_suelo()
+suelo()
+posicion_casa()
+frente_casa()
+techo_casa()
+posicion_ventana_1()
+ventanas()
+posicion_ventana_2()
+ventanas()
+posicion_puerta()
+puerta_y_chapa()
+sol()
 
-penup()
-goto(270,-120)
-pendown()
-pencolor("yellow")
-fillcolor("yellow")
-begin_fill()
-width(1)
-circle(4)
-end_fill()
-
-
-# penup()
-# goto(-350,370)
-# pendown()
-# fillcolor("yellow")
-# begin_fill()
-# circle(70)
-# end_fill()
-
-# penup()
-# goto(-350,300)
-# pendown()
-# pencolor("yellow")
-# pensize(5)
-# for i in range(6):
-#  forward(100)
-#  backward(200)
-#  forward(100)
-#  right(30)
-
-# Llamar a mainloop() para comenzar el ciclo principal de eventos de tkinter
 ventana.mainloop()
+
 
 
 

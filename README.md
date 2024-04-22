@@ -9,10 +9,10 @@ ventana = Screen()
 ventana.title("Dibujo Turtle")
 
 ventana.getcanvas().master.resizable(False, False)
-ventana.getcanvas().master.iconbitmap(r"C:\Users\tortuga.ico")
+# ventana.getcanvas().master.iconbitmap(r"C:\Users\tortuga.ico")
 
-ancho_ventana_turtle = 900
-alto_ventana_turtle = 650
+ancho_ventana_turtle = 800
+alto_ventana_turtle = 600
 
 ancho_pantalla = ventana.getcanvas().master.winfo_screenwidth()
 alto_pantalla = ventana.getcanvas().master.winfo_screenheight()
@@ -22,12 +22,9 @@ print(ancho_pantalla, alto_pantalla)
 x = (ancho_pantalla - ancho_ventana_turtle) // 2
 y = (alto_pantalla - alto_ventana_turtle) // 2
 
-ventana.getcanvas().master.geometry(f"{ancho_ventana_turtle}x{alto_ventana_turtle}+{x-10}+{y-15}")
+ventana.getcanvas().master.geometry(f"{ancho_ventana_turtle}x{alto_ventana_turtle}+{x}+{y}")
 
-
-
-speed(10)
-
+speed (10)
 
 penup()
 goto(-500,400)
@@ -45,7 +42,7 @@ penup()
 goto(-500,0)
 pendown()
 
-fillcolor("goldenrod")
+fillcolor("seaGreen")
 begin_fill()
 for i in range(2):
  forward(1000)
@@ -53,6 +50,23 @@ for i in range(2):
  forward(400)
  right(90)
 end_fill()
+
+#sol
+pensize(5)
+penup()
+goto(-250,140)
+pendown()
+color('orange','yellow')
+begin_fill()
+circle(50)
+end_fill()
+
+for i in range(18):
+    right(90)
+    forward(40)
+    back(40)
+    left(40)
+    circle(50,0) #primero radio despues grados
 
 penup()
 goto(100,0)
@@ -143,24 +157,24 @@ circle(4)
 end_fill()
 
 
-penup()
-goto(-350,370)
-pendown()
-fillcolor("yellow")
-begin_fill()
-circle(70)
-end_fill()
+# penup()
+# goto(-350,370)
+# pendown()
+# fillcolor("yellow")
+# begin_fill()
+# circle(70)
+# end_fill()
 
-penup()
-goto(-350,300)
-pendown()
-pencolor("yellow")
-pensize(5)
-for i in range(6):
- forward(100)
- backward(200)
- forward(100)
- right(30)
+# penup()
+# goto(-350,300)
+# pendown()
+# pencolor("yellow")
+# pensize(5)
+# for i in range(6):
+#  forward(100)
+#  backward(200)
+#  forward(100)
+#  right(30)
 
 # Llamar a mainloop() para comenzar el ciclo principal de eventos de tkinter
 ventana.mainloop()

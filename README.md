@@ -7,7 +7,7 @@ ventana = Screen()
 ventana.title("Paisaje")
 
 ventana.getcanvas().master.resizable(False, False)
-ventana.getcanvas().master.iconbitmap(r"C:\Users\G.ico")
+ventana.getcanvas().master.iconbitmap("G.ico")
 
 ancho_ventana_turtle = 800
 alto_ventana_turtle = 600
@@ -178,7 +178,6 @@ puerta_y_chapa()
 sol()
 
 ventana.mainloop()
-
 
 
 

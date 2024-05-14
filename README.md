@@ -14,7 +14,6 @@ alto_ventana_turtle = 600
 
 ancho_pantalla = ventana.getcanvas().master.winfo_screenwidth()
 alto_pantalla = ventana.getcanvas().master.winfo_screenheight()
-print(ancho_pantalla, alto_pantalla)
 
 
 x = (ancho_pantalla - ancho_ventana_turtle) // 2
